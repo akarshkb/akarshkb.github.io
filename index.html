@@ -2,7 +2,6 @@
 <script src='https://d3js.org/d3.v5.min.js'>
 </script>
 <body style="background-color:red;">
-<p>Summary of All Managers performance since Sir Alex Ferguson</p>
 <!-- <button onclick="next()">
     Next
 </button> -->
@@ -63,23 +62,26 @@ mode0Function();
 
 function mode0Function() {
 d3.select("p").html = "";
-d3.select("p").remove();
+d3.selectAll("p").remove();
 d3.select("body").append("p").text("Summary of All Managers performance since Sir Alex Ferguson");
 }
 
 
 function mode1Function() {
 d3.select("p").html = "";
-d3.select("p").remove();
+d3.selectAll("p").remove();
+d3.selectAll("img").remove();
 d3.select("body").append("p").text("SIR ALEX FERGUSON");
-
+ImagePath = "C:\Users\Akarshkb\Desktop\CS416FP\Alex-Ferguson"
+d3.select("body").append("img").attr("src", ImagePath)
 
 
 }
 
 function mode2Function() {
 d3.select("p").html = "";
-d3.select("p").remove();
+d3.selectAll("p").remove();
+d3.selectAll("img").remove();
 d3.select("body").append("p").text("DAVID MOYEZ");
 
 
@@ -115,6 +117,7 @@ d3.select("body").append("p").text("SUMMARY");
 
 
 </script>
+<p>Summary of All Managers performance since Sir Alex Ferguson</p>
 
 
 </body></html>
