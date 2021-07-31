@@ -16,7 +16,96 @@ Comparing all the Manchester United Managers
 
 
 <script>
-d3.select('body').append("button").text("NEXT")
+
+mode = 0
+d3.select('body').append("button").text("NEXT").on("click", function(){
+if (mode == 0) {
+mode = 1;
+mode1Function();
+} else if (mode == 1){
+mode = 2;
+mode2Function();
+} else if (mode == 2) {
+mode = 3;
+mode3Function();
+} else if (mode == 3) {
+
+mode = 4;
+mode4Function();
+} else if (mode == 4){
+mode = 5;
+mode5Function();
+} else {
+mode = 5
+mode5Function();
+}
+
+
+});
+
+d3.select('body').append("button").text("PREVIOUS").on("click", function() {
+if (mode == 5) {
+mode = 4;
+mode4Function();
+} else if (mode == 4) {
+mode = 3;
+mode3Function();
+} else if (mode == 3) {
+mode = 2;
+mode2Function();
+} else if (mode == 2) {
+mode = 1;
+mode1Function();
+} else if (mode == 1) {
+mode = 0
+mode0Function();
+}
+});
+
+function modeZero() {
+d3.select("body").html = "";
+d3.select("body").append("Manchester United Manager Statistics!");
+
+
+}
+
+
+function modeOne() {
+d3.select("body").html = "";
+d3.select("body").append("SIR ALEX FERGUSON");
+
+
+
+}
+
+function modeTwo() {
+d3.select("body").html = "";
+d3.select("body").append("DAVID MOYEZ");
+
+
+}
+
+
+function modeThree(){
+d3.select("body").html = "";
+d3.select("body").append("LOUIS VAN GAAL");
+
+
+
+
+}
+function modeFour(){
+d4.select("body").html = "";
+d3.select("body").append("JOSE MOURINHO");
+
+
+}
+function modeFive() {
+d4.select("body").html = "";
+d3.select("body").append("OLE GUNNAR SOLSKJAER");
+
+}
+
 </script>
 
 
