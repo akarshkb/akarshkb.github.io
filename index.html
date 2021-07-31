@@ -30,16 +30,22 @@ mode4Function();
 } else if (mode == 4){
 mode = 5;
 mode5Function();
+} else if (mode == 5) {
+mode = 6
+mode6Function();
 } else {
-mode = 5
-mode5Function();
+mode6Function();
 }
 
 
 });
 
 d3.select('body').append("button").text("PREVIOUS").on("click", function() {
-if (mode == 5) {
+
+if (mode == 6){
+mode = 5;
+mode5Function();
+}else if (mode == 5) {
 mode = 4;
 mode4Function();
 } else if (mode == 4) {
@@ -53,6 +59,8 @@ mode = 1;
 mode1Function();
 } else if (mode == 1) {
 mode = 0
+mode0Function();
+} else {
 mode0Function();
 }
 });
@@ -102,6 +110,13 @@ d3.select("p").remove();
 d3.select("body").append("p").text("OLE GUNNAR SOLSKJAER");
 
 }
+
+function mode6Function(){
+d3.select("p").html = "";
+d3.select("p").remove();
+d3.select("body").append("p").text("SUMMARY");
+}
+
 
 </script>
 
