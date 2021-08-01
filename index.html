@@ -78,6 +78,10 @@ d3.selectAll("p").remove();
 d3.selectAll("img").remove();
 d3.select("body").append("p").text("SIR ALEX FERGUSON");
 d3.select("body").append("img").attr("src", "http://akarshkb.github.io/Alex-Ferguson.jpg").attr("width", '400').attr("height", '400');
+var pie = d3.pie();
+var arc = d3.arc().innerRadius(100).outerRadius(250).startAngle(60);
+
+svg.selectAll("path").data(pie([895, 338, 267])).enter().append("path").attr("d", arc)
 }
 
 function mode2Function() {
