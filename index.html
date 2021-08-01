@@ -1,141 +1,185 @@
 <html>
 <script src='https://d3js.org/d3.v5.min.js'>
 </script>
+
+<head>
+    <meta charset="utf-8">
+    <title>CS 416 Final Project</title>
+    <meta name="description" content="CS 416 Final Project">
+    <meta name="author" content="Akarsh Bhagavath">
+    <link rel="icon" 
+      type="image/png" 
+      href="favicon.ico">
+</head>
+
 <body>
-<!-- <button onclick="next()">
-    Next
-</button> -->
+    <div class='header' id='title'>
+        <h1 style="text-align:center"> CS 416 Final Project </h1>
+        <h3 style="text-align:center"> A compartive visualization of managers' performances at Manchester United</h3>
+    </div>
+    
+    <script>
+        prev_button = d3.select('body').append("button").text("Previous")
+        next_button = d3.select('body').append("button").text("Next")
+    </script>
+    
+    <br></br>
 
-<img src="http://akarshkb.github.io/Manchester-United-Crest.jpg", width="600", height="400"></img>
+    <p style="text-align:center"><img src="./mu.png" class="center">
+    
+    <script>
+        mode = 0
+        prev_button.on("click", function() {
+            if (mode == 6) {
+                mode = 5;
+                mode5Function();
+            } else if (mode == 5) {
+                mode = 4;
+                mode4Function();
+            } else if (mode == 4) {
+                mode = 3;
+                mode3Function();
+            } else if (mode == 3) {
+                mode = 2;
+                mode2Function();
+            } else if (mode == 2) {
+                mode = 1;
+                mode1Function();
+            }
+        });
 
+        next_button.on("click", function(){
+            if (mode == 0) {
+                mode = 1;
+                mode1Function();
+            } else if (mode == 1){
+                mode = 2;
+                mode2Function();
+            } else if (mode == 2) {
+                mode = 3;
+                mode3Function();
+            } else if (mode == 3) {
+                mode = 4;
+                mode4Function();
+            } else if (mode == 4){
+                mode = 5;
+                mode5Function();
+            } else if (mode == 5) {
+                mode = 6
+                mode6Function();
+            }
+        });
 
-<script>
-mode = 0
-d3.select('body').append("button").text("NEXT").on("click", function(){
-if (mode == 0) {
-mode = 1;
-mode1Function();
-} else if (mode == 1){
-mode = 2;
-mode2Function();
-} else if (mode == 2) {
-mode = 3;
-mode3Function();
-} else if (mode == 3) {
-mode = 4;
-mode4Function();
-} else if (mode == 4){
-mode = 5;
-mode5Function();
-} else if (mode == 5) {
-mode = 6
-mode6Function();
-} else {
-mode6Function();
-}
+        function mode1Function() {
+            d3.select("p").html = "";
+            d3.selectAll("p").remove();
+            d3.selectAll("img").remove();
+            d3.selectAll("svg").remove();
+            d3.select("body").append("p").text("Sir Alex Ferguson \(1986-2013\)");
+            d3.select("body").append("img").attr("src", "../saf.jpg").attr("width", '250');
+            
+            data = [895, 338, 267]
 
-});
+            drawPieChart(data)
+        }
 
-d3.select('body').append("button").text("PREVIOUS").on("click", function() {
+        function mode2Function() {
+            d3.select("p").html = "";
+            d3.selectAll("p").remove();
+            d3.selectAll("img").remove();
+            d3.selectAll("svg").remove();
+            d3.select("body").append("p").text("David Moyes \(2013-2014\)");
+            d3.select("body").append("img").attr("src", "./DM.jpg").attr("width", '250');
 
-if (mode == 6){
-mode = 5;
-mode5Function();
-}else if (mode == 5) {
-mode = 4;
-mode4Function();
-} else if (mode == 4) {
-mode = 3;
-mode3Function();
-} else if (mode == 3) {
-mode = 2;
-mode2Function();
-} else if (mode == 2) {
-mode = 1;
-mode1Function();
-} else if (mode == 1) {
-mode = 0
-mode0Function();
-} else {
-mode0Function();
-}
-});
+            data = [27, 9, 15]
 
-function mode0Function() {
-d3.select("p").html = "";
-d3.selectAll("p").remove();
-d3.selectAll("img").remove();
-d3.selectAll("svg").remove();
-d3.select("body").append("p").text("Summary of All Managers performance since Sir Alex Ferguson");
-d3.select("body").append("img").attr("src", "http://akarshkb.github.io/Manchester-United-Crest.jpg").attr("width", '400').attr("height", '400');
-}
+            drawPieChart(data)
+        }
 
+        function mode3Function() {
+            d3.select("p").html = "";
+            d3.select("p").remove();
+            d3.selectAll("img").remove();
+            d3.selectAll("svg").remove();
+            d3.select("body").append("p").text("Louis Van Gaal \(2014-2016\)");
+            d3.select("body").append("img").attr("src", "./LVG.jpg").attr("width", '250');
 
-function mode1Function() {
-d3.select("p").html = "";
-d3.selectAll("p").remove();
-d3.selectAll("img").remove();
-d3.selectAll("svg").remove();
-d3.select("body").append("p").text("SIR ALEX FERGUSON");
-d3.select("body").append("img").attr("src", "http://akarshkb.github.io/Alex-Ferguson.jpg").attr("width", '400').attr("height", '400');
-var pie = d3.pie();
-var arc = d3.arc().innerRadius(50).outerRadius(100).startAngle(0).endAngle(360);
-var svg = d3.select("body").append("svg").attr("width", 300).attr("height", 300);
-svg.attr("transform", "translate(300, 300)");
-color = ["green", "yellow", "black"];
-svg.selectAll("path").data(pie([895, 338, 267])).enter().append("path").attr("d", arc).attr("fill",function(d, i) {return color[i];});
-}
+            data = [54,	25,	24]
 
-function mode2Function() {
-d3.select("p").html = "";
-d3.selectAll("p").remove();
-d3.selectAll("img").remove();
-d3.selectAll("svg").remove();
-d3.select("body").append("p").text("DAVID MOYEZ");
-d3.select("body").append("img").attr("src", "http://akarshkb.github.io/David-Moyez.jpg").attr("width", '600').attr("height", '400');
-}
+            drawPieChart(data)
+        }
 
+        function mode4Function() {
+            d3.select("p").html = "";
+            d3.select("p").remove();
+            d3.selectAll("img").remove();
+            d3.selectAll("svg").remove();
+            d3.select("body").append("p").text("Jose Mourinho \(2016-2018\)");
+            d3.select("body").append("img").attr("src", "./jm.jpg").attr("width", '250');
 
-function mode3Function(){
-d3.select("p").html = "";
-d3.select("p").remove();
-d3.selectAll("img").remove();
-d3.selectAll("svg").remove();
-d3.select("body").append("p").text("LOUIS VAN GAAL");
-d3.select("body").append("img").attr("src", "http://akarshkb.github.io/LVG.jpg").attr("width", '600').attr("height", '400');
-}
+            data = [84, 32, 28]
 
+            drawPieChart(data)
+        }
 
-function mode4Function(){
-d3.select("p").html = "";
-d3.select("p").remove();
-d3.selectAll("img").remove();
-d3.selectAll("svg").remove();
-d3.select("body").append("p").text("JOSE MOURINHO");
-d3.select("body").append("img").attr("src", "http://akarshkb.github.io/JM.jpg").attr("width", '600').attr("height", '400');
+        function mode5Function() {
+            d3.select("p").html = "";
+            d3.select("p").remove();
+            d3.selectAll("img").remove();
+            d3.selectAll("svg").remove();
+            d3.select("body").append("p").text("Ole Gunnar Solskjaer \(2018-Present\)");
+            d3.select("body").append("img").attr("src", "./ogs.jpg").attr("width", '250');
 
-}
-function mode5Function() {
-d3.select("p").html = "";
-d3.select("p").remove();
-d3.selectAll("img").remove();
-d3.selectAll("svg").remove();
-d3.select("body").append("p").text("OLE GUNNAR SOLSKJAER");
-d3.select("body").append("img").attr("src", "http://akarshkb.github.io/OGS.jpg").attr("width", '600').attr("height", '400');
-}
+            data = [84, 34, 33]
 
-function mode6Function(){
-d3.select("p").html = "";
-d3.select("p").remove();
-d3.selectAll("img").remove();
-d3.selectAll("svg").remove();
-d3.select("body").append("p").text("SUMMARY");
-}
+            drawPieChart(data)
+        }
 
+        function mode6Function() {
+            d3.select("p").html = "";
+            d3.select("p").remove();
+            d3.selectAll("img").remove();
+            d3.selectAll("svg").remove();
+            d3.select("body").append("p").text("Summary");
+        }
 
-</script>
-<p>Summary of All Managers performance since Sir Alex Ferguson</p>
-<svg>
-</svg>
+        function drawPieChart(data) {
+            var svg = d3.select("body").append("svg").attr("width", 500).attr("height", 500);
+            svg.attr("transform", "translate(300, 300)");
+            var svg = d3.select("svg"),
+                width = svg.attr("width"),
+                height = svg.attr("height"),
+                radius = Math.min(width, height) / 2,
+                g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-</body></html>
+            var color = ["#C70039", "#ECF0F1", "#212F3D"];
+
+            // Generate the pie
+            var pie = d3.pie()
+                        .sort(null);
+
+            // Generate the arcs
+            var arc = d3.arc()
+                        .innerRadius(0)
+                        .outerRadius(radius);
+
+            //Generate groups
+            var arcs = g.selectAll("arc")
+                        .data(pie(data))
+                        .enter()
+                        .append("g")
+                        .attr("class", "arc")
+
+            //Draw arc paths
+            arcs.append("path")
+                .attr("fill", function(d, i) {
+                    return color[i];
+                })
+                .attr("d", arc);
+
+        }
+    </script>
+
+</body>
+
+</html>
