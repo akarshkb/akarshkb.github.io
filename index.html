@@ -81,7 +81,7 @@ var pie = d3.pie();
 var arc = d3.arc().innerRadius(100).outerRadius(250).startAngle(120).endAngle(360);
 var svg = d3.select("body").append("svg");
 svg.attr("transform", "translate(300, 0)");
-svg.selectAll("path").data(pie([895, 338, 267])).enter().append("path").attr("d", arc).attr("fill", "green");
+svg.selectAll("path").data(pie([895, 338, 267])).enter().append("path").attr("d", arc).attr("fill", ["green", "blue", "yellow"]);
 }
 
 function mode2Function() {
