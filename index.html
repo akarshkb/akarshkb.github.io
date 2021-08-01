@@ -8,10 +8,6 @@
 
 <img src="http://akarshkb.github.io/Manchester-United-Crest.jpg", width="600", height="400"></img>
 
-<svg width="600" height="600">
-
-</svg>
-
 <script>
 
 mode = 0
@@ -83,7 +79,7 @@ d3.select("body").append("p").text("SIR ALEX FERGUSON");
 d3.select("body").append("img").attr("src", "http://akarshkb.github.io/Alex-Ferguson.jpg").attr("width", '400').attr("height", '400');
 var pie = d3.pie();
 var arc = d3.arc().innerRadius(100).outerRadius(250).startAngle(120).endAngle(360);
-var svg = d3.select("svg");
+var svg = d3.select("body").append("svg");
 svg.selectAll("path").data(pie([895, 338, 267])).enter().append("path").attr("d", arc).attr("fill", "green");
 }
 
