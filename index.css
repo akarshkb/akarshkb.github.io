@@ -1,0 +1,177 @@
+/* Insert your global CSS here. */
+body {
+    font-family: sans-serif;
+  }
+  
+  h1 {text-align: center;}
+
+  p {
+    font-size: 12px;
+  }
+  
+  select {
+    width: 180px;
+  }
+  
+  label {
+    font-size: 12pt;
+  }
+  
+  text.axis-labels {
+    font-size: 14;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-anchor: middle;
+  }
+  
+  /* ID Styles */
+  
+  #shot-descript {
+    padding-top: 12pt;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  /* Class styles */
+  
+  .header {
+    background-color: black;
+    color: white;
+    padding: 1pt;
+  }
+  
+  .center {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  
+  .subtitle {
+    font-size: 1.2em;
+  }
+  
+  .explain {
+    font-size: 12pt;
+    text-indent: 2em;
+  }
+  
+  .descript {
+    font-size: 11pt;
+    text-indent: 2em;
+  }
+  
+  .flex-container {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+  }
+  
+  .flex-technique {
+    display: flex;
+    justify-content: left;
+  }
+  
+  .shot-legend {
+    font-size: 10pt;
+    flex: 1 1 0;
+    padding-left: 1%;
+    padding-right: 1%;
+  
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+  
+  .dropdown-label {
+    padding: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  
+  .agg-label {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  
+  .red {
+    color: #ff0000; 
+    font-weight: bold;
+  }
+  
+  .blue {
+    color: #0000ff; 
+    font-weight: bold;
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+  
+  .faint {
+    opacity: 0.6;
+    font-weight: bold;
+  }
+  
+  .hover {
+    opacity: 0.6;
+    font-style: italic;
+  }
+  
+  /* Modified from https://tutorialzine.com/2014/07/css-inline-help-tips */
+  .help-tip{
+    text-align: center;
+    font-size: 10pt;
+    cursor: default;
+  }
+  
+  .help-tip:before{
+    content:'Hover for more';
+    opacity: 0.6;
+    font-style: italic;
+  }
+  
+  .help-tip:hover p{
+    display:block;
+    transform-origin: 100% 0%;
+  }
+  
+  .help-tip p {    /* The tooltip */
+    display: none;
+    text-align: left;
+    background-color: #1E2021;
+    padding: 20px;
+    width: 430px;
+    position: absolute;
+    right: 27%;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    color: #FFF;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  
+  .help-tip p:before{ /* The pointer of the tooltip */
+    position: absolute;
+    content: '';
+    width:0;
+    height: 0;
+    border:6px solid transparent;
+    border-bottom-color:#1E2021;
+    right:10px;
+    top:-12px;
+  }
+  
+  .help-tip p:after{ /* Prevents the tooltip from being hidden */
+    width:100%;
+    height:40px;
+    content:'';
+    position: absolute;
+    top:-40px;
+    left:0;
+  }
+  

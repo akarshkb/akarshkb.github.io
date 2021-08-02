@@ -17,7 +17,8 @@
         <h1 style="text-align:center"> CS 416 Final Project </h1>
         <h3 style="text-align:center"> A compartive visualization of managers' performances at Manchester United</h3>
     </div>
-    
+    <p style="text-align:center"> The following visualization compares the win rates of managers since Sir Alex Ferguson to look into 
+how Manchester United have faired as a team since he left, and whether the newer managers have done a better job. </p>
     <script>
         prev_button = d3.select('body').append("button").text("Previous")
         next_button = d3.select('body').append("button").text("Next")
@@ -25,7 +26,7 @@
     
     <br></br>
 
-    <p style="text-align:center"><img src="./mu.jpg" class="center">
+    <p style="text-align:center"><img src="./mu.png" class="center">
     
     <script>
         mode = 0
@@ -75,8 +76,10 @@
             d3.selectAll("p").remove();
             d3.selectAll("img").remove();
             d3.selectAll("svg").remove();
-            d3.select("body").append("p").text("Sir Alex Ferguson \(1986-2013\)");
-            d3.select("body").append("img").attr("src", "./SAF.jpg").attr("width", '250');
+            d3.select("body").append("p").text("Sir Alex Ferguson is widely regarded as one of the greatest managers of all time, if not the greatest. He won several trophies with Manchester United, multiple Premier League titles, and Champions League titles as well. ")
+            .attr("style", "text-align:center");
+            d3.select("body").append("p").text("Sir Alex Ferguson \(Managed MAN UTD between : 1986-2013\)");
+            d3.select("body").append("img").attr("src", "./saf.jpg").attr("width", '250').attr("height", '600');
             
             data = [895, 338, 267]
 
@@ -88,8 +91,10 @@
             d3.selectAll("p").remove();
             d3.selectAll("img").remove();
             d3.selectAll("svg").remove();
+            d3.select("body").append("p").text("David Moyes was selected by Sir Alex Ferguson as the next manager of Manchester United. However, he failed to deliver results, and was sacked just after one year when Manchester United finished seventh in the Premier League. ")
+            .attr("style", "text-align:center");
             d3.select("body").append("p").text("David Moyes \(2013-2014\)");
-            d3.select("body").append("img").attr("src", "./DM.jpg").attr("width", '250');
+            d3.select("body").append("img").attr("src", "./dm.jpg").attr("width", '250').attr("height", '600');
 
             data = [27, 9, 15]
 
@@ -98,11 +103,13 @@
 
         function mode3Function() {
             d3.select("p").html = "";
-            d3.select("p").remove();
+            d3.selectAll("p").remove();
             d3.selectAll("img").remove();
             d3.selectAll("svg").remove();
+            d3.select("body").append("p").text("Louis Van Gaal is an experienced Dutch Coach who was appointed as the next manager. He helped steady the ship for Manchester United, but as a consequence, their soccer got boring. He too was let go after two years, when Manchester United finished 5th and failed to  qualify for the Champions League.")
+            .attr("style", "text-align:center");
             d3.select("body").append("p").text("Louis Van Gaal \(2014-2016\)");
-            d3.select("body").append("img").attr("src", "./LVG.jpg").attr("width", '250');
+            d3.select("body").append("img").attr("src", "./LVG.jpg").attr("width", '250').attr("height", '600');
 
             data = [54,	25,	24]
 
@@ -111,11 +118,13 @@
 
         function mode4Function() {
             d3.select("p").html = "";
-            d3.select("p").remove();
+            d3.selectAll("p").remove();
             d3.selectAll("img").remove();
             d3.selectAll("svg").remove();
+            d3.select("body").append("p").text("Jose Mourinho is a highly talented manager, and has a knack for managing underdog teams to wins titles. Although he did not win the Premiere League, he helped Manchester United to win the Europa league and FA cup. He was let go after two seasons when Manchester United finished 5th.")
+            .attr("style", "text-align:center");
             d3.select("body").append("p").text("Jose Mourinho \(2016-2018\)");
-            d3.select("body").append("img").attr("src", "./jm.jpg").attr("width", '250');
+            d3.select("body").append("img").attr("src", "./jm.jpg").attr("width", '250').attr("height", '600');
 
             data = [84, 32, 28]
 
@@ -124,11 +133,13 @@
 
         function mode5Function() {
             d3.select("p").html = "";
-            d3.select("p").remove();
+            d3.selectAll("p").remove();
             d3.selectAll("img").remove();
             d3.selectAll("svg").remove();
+            d3.select("body").append("p").text("A former Man Utd player himself, Ole Gunnar Solskjaer is arguably the best manager Manchester United have had since Sir Alex Ferguson. Although Manchester United have not won any titles with him, they have constitently finished in the top 4, qualified for the Champions League, and started new players from the youth team. Ole shows a lot of promise in building a young and resilient Man Utd team. ")
+            .attr("style", "text-align:center");
             d3.select("body").append("p").text("Ole Gunnar Solskjaer \(2018-Present\)");
-            d3.select("body").append("img").attr("src", "./ogs.jpg").attr("width", '250');
+            d3.select("body").append("img").attr("src", "./ogs.jpg").attr("width", '250').attr("height", '600');
 
             data = [84, 34, 33]
 
@@ -137,15 +148,66 @@
 
         function mode6Function() {
             d3.select("p").html = "";
-            d3.select("p").remove();
+            d3.selectAll("p").remove();
             d3.selectAll("img").remove();
             d3.selectAll("svg").remove();
             d3.select("body").append("p").text("Summary");
+
+            d3.select("body").append("p").text("The following bar chart shows each manager's win rates with Man Utd during their term. As you can see, progressively from David Moyes, Man Utd's win rates have improved. Although Mourinho had a higher win rate than Solskjaer, Solskjaer performed better in the Premier League, leading to the board's continued trust in him. It is to be noted, however, that Sir Alex's stats remain insurmountable.")
+            .attr("style", "text-align:center");
+
+            x_data = ["Sir Alex Ferguson", "David Moyes", "Louis Van Gaal", "Jose Mourinho", "Ole Gunnar Solskjaer"] 
+            y_data = [0.5966666, 0.5294117, 0.5242718, 0.5833333, 0.556291]
+
+            // set the dimensions and margins of the graph
+            var margin = {top: 30, right: 30, bottom: 90, left: 60},
+            width = 460 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+
+            var svg = d3.select("body")
+                .append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+            //X axis
+            var xScale = d3.scaleBand()
+                .range([0, width])
+                .domain(x_data)
+                .padding(0.2);
+            
+            svg.append("g")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(xScale))
+                .selectAll("text")
+                .attr("transform", "translate(-10,0)rotate(-45)")
+                .style("text-anchor", "end");
+
+            // Add Y axis
+            var yScale = d3.scaleLinear()
+                .domain([0, 1])
+                .range([ height, 0]);
+            
+            svg.append("g")
+                .call(d3.axisLeft(yScale));
+
+            // Bars
+            svg.selectAll("rect")
+                .data(y_data) // (Hardcoded) only Urbana’s data
+                .join("rect")
+                    .attr("x", (dataPoint, i) => xScale(x_data[i])) // i is dataPoint’s index in the data array
+                    .attr("y", (dataPoint, i) => yScale(dataPoint))
+                    .attr("width", (dataPoint, i) => xScale.bandwidth())
+                    .attr("height", (dataPoint, i) => height - yScale(dataPoint))
+                    .attr("fill", "#C70039")
         }
 
         function drawPieChart(data) {
+            d3.selectAll('#tooltip').remove();
+
             var svg = d3.select("body").append("svg").attr("width", 500).attr("height", 500);
-            svg.attr("transform", "translate(300, 300)");
+            svg.attr("transform", "translate(150, 0)");
             var svg = d3.select("svg"),
                 width = svg.attr("width"),
                 height = svg.attr("height"),
@@ -160,7 +222,7 @@
 
             // Generate the arcs
             var arc = d3.arc()
-                        .innerRadius(0)
+                        .innerRadius(150)
                         .outerRadius(radius);
 
             //Generate groups
@@ -170,13 +232,40 @@
                         .append("g")
                         .attr("class", "arc")
 
+            var tooltip = d3.select('body')
+                .append('div')
+                .attr('id', 'tooltip')
+                .attr('style', 'position: absolute; opacity: 0; display: inline-block; background-color: rgba(255, 255, 255, 0.8); border: 1px solid lightgrey; font-size: small; padding: 5px;');
+
             //Draw arc paths
             arcs.append("path")
                 .attr("fill", function(d, i) {
                     return color[i];
                 })
-                .attr("d", arc);
+                .attr("d", arc)
+                .on('mouseover', function(d, i) {
+                    d3.select('#tooltip')
+                    .style('opacity', 1)
+                    .style("left", (d3.event.pageX+15) + "px")
+                    .style("top", (d3.event.pageY+15) + "px")
+                    .html(data[i]);
+                })
+                .on("mousemove", function(d, i) {
+                /* Runs when mouse moves inside a rect */
+                    d3.select('#tooltip')
+                    .style("left", (d3.event.pageX+15) + "px")
+                    .style("top", (d3.event.pageY+15) + "px");
+                })
+                .on('mouseout', function() {
+                    d3.select('#tooltip').style('opacity', 0)
+                });
 
+                svg.append("circle").attr("cx",210).attr("cy",225).attr("r", 6).style("fill", "#C70039")
+                svg.append("circle").attr("cx",210).attr("cy",250).attr("r", 6).style("fill", "#ECF0F1")
+                svg.append("circle").attr("cx",210).attr("cy",275).attr("r", 6).style("fill", "#212F3D")
+                svg.append("text").attr("x", 230).attr("y", 225).text("WINS").style("font-size", "15px").attr("alignment-baseline","middle")
+                svg.append("text").attr("x", 230).attr("y", 250).text("DRAWS").style("font-size", "15px").attr("alignment-baseline","middle")
+                svg.append("text").attr("x", 230).attr("y", 275).text("LOSSES").style("font-size", "15px").attr("alignment-baseline","middle")
         }
     </script>
 
