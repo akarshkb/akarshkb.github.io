@@ -14,6 +14,7 @@
 <body>
     <div class='header' id='title'>
         <h1 style="text-align:center"> CS 416 Final Project </h1>
+        <h2 style="text-align:center"> Akarsh K Bhagavath </h2>
         <h3 style="text-align:center"> A compartive visualization of managers' performances at Manchester United</h3>
     </div>
     <p style="text-align:center"> The following visualization compares the win rates of managers since Sir Alex Ferguson to look into 
@@ -145,6 +146,8 @@ how Manchester United have faired as a team since he left, and whether the newer
             drawPieChart(data)
         }
 
+
+        // Citation : Referred to this website to create bar charts: https://www.d3-graph-gallery.com/graph/barplot_basic.html
         function mode6Function() {
             d3.select("p").html = "";
             d3.selectAll("p").remove();
@@ -202,6 +205,11 @@ how Manchester United have faired as a team since he left, and whether the newer
                     .attr("fill", "#C70039")
         }
 
+
+        // Citation : Referred to this website to create pie charts and arcs : https://www.tutorialsteacher.com/d3js/create-pie-chart-using-d3js
+        // Citation : Referred to this website for arcs : https://www.geeksforgeeks.org/d3-js-arc-function/
+        // Citation : Referred to this website for tooltips : https://mappingwithd3.com/tutorials/basics/tooltip/
+        // Citation : Referred to this website for legends : https://www.d3-graph-gallery.com/graph/custom_legend.html
         function drawPieChart(data) {
             d3.selectAll('#tooltip').remove();
 
